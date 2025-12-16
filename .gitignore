@@ -1,0 +1,28 @@
+# Data files
+data/*.csv
+data/processed/
+
+# Keep the data folder structure
+!data/.gitkeep
+!data/processed/.gitkeep
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

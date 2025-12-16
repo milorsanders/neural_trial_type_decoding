@@ -1,0 +1,13 @@
+name: MLCourse
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy=1.26
+  - scikit-learn
+  - matplotlib
+  - pandas
+  - openml
+  - seaborn
+  - ca-certificates
+  - openssl
