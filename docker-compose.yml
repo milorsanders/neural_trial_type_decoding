@@ -1,0 +1,28 @@
+services:
+  notebook:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/app/data
+      - ./notebooks:/app/notebooks
+      - ./images:/app/images
+    environment:
+      - PYTHONUNBUFFERED=1
+    working_dir: /app/notebooks
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''
+
+  # Run notebook headlessly (for CI/CD or batch processing)
+  run-pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./notebooks:/app/notebooks
+    working_dir: /app/notebooks
+    command: >
+      python -c "
+      import subprocess
+      subprocess.run(['jupyter', 'nbconvert', '--to', 'notebook', '--execute', 
+                      '--inplace', 'final_submission.ipynb'], check=True)
+      print('Pipeline completed successfully!')
+      "
