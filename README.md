@@ -1,4 +1,4 @@
-# Neural Trial-Type Decoding (BIO-322)
+# Neural Trial-Type Decoding
 
 ## Overview
 Parviz Ghaderi (Carl Petersen lab, EPFL) recorded mouse neural activity and behavior across multiple sessions and trials. Each 3-second trial contains combinations of auditory tones and whisker deflections plus a possible lick response; rewards are delivered when the lick matches the required contingency. The goal is to predict the trial type (stimuli + lick response) from neural activity.
